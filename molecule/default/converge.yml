@@ -4,7 +4,7 @@
   tasks:
     - name: "Include ddclient"
       include_role:
-        name: "maxhoesel.ddclient"
+        name: "ddclient"
       vars:
         ddclient_executable_path: /usr/local/bin/ddclient-test
         ddclient_configfile: /etc/ddclient-test.conf
