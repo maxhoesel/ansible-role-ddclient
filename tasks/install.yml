@@ -1,10 +1,5 @@
 - block:
-    - name: Download ddclient release
-      get_url:
-        url:
-        dest: /tmp/ddclient.tar.gz
-
-    - name: Unpack ddclient release archive
+    - name: Download and unpack ddclient release archive
       unarchive:
         src: "https://github.com/ddclient/ddclient/archive/refs/tags/v{{ ddclient_version }}.tar.gz"
         dest: /tmp

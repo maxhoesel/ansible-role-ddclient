@@ -6,7 +6,7 @@
 
 - name: Install ddclient
   include_tasks: install.yml
-  when: _ddclient_exec.stat.exists
+  when: not _ddclient_exec.stat.exists
 
 - name: ddclient directories are present
   file:

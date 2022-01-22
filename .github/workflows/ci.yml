@@ -8,7 +8,6 @@ defaults:
   run:
     working-directory: ddclient
 
-
 jobs:
   lint:
     name: "CI"
