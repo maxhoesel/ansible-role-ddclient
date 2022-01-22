@@ -1,6 +1,7 @@
 - name: Dependencies are installed
   apt:
     name:
+      - git
       - debconf
       - lsb-base
       - perl
@@ -8,19 +9,19 @@
       - libdata-validate-ip-perl
 
 - block:
-    - name: Download and unpack ddclient release archive
-      unarchive:
-        src: "https://github.com/ddclient/ddclient/archive/refs/tags/v{{ ddclient_version }}.tar.gz"
-        dest: /tmp
-        remote_src: yes
+    - name: Download ddclient repo
+      git:
+        repo: "https://github.com/ddclient/ddclient"
+        version: "{{ ddclient_version }}"
+        dest: /tmp/ddclient
+        depth: 1
 
     - name: Install ddclient binary
-      command: "cp /tmp/ddclient-{{ ddclient_version }}/ddclient {{ ddclient_executable_path }}"
+      command: "cp /tmp/ddclient/ddclient.in {{ ddclient_executable_path }}"
   always:
     - name: remove ddclient installer files
       file:
         path: "{{ item }}"
         state: absent
       loop:
-        - /tmp/ddclient.tar.gz
-        - "/tmp/ddclient-{{ ddclient_version }}"
+        - "/tmp/ddclient"

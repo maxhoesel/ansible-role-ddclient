@@ -4,8 +4,8 @@ argument_specs:
     options:
       ddclient_version:
         type: str
-        default: 3.9.1
-        description: Version of ddclient to install (e.g. "3.9.1")
+        default: develop
+        description: Version of ddclient to install
       ddclient_executable_path:
         type: str
         default: /usr/local/sbin/ddclient
@@ -39,19 +39,3 @@ argument_specs:
         elements: dict
         default: []
         description: List of ddclient configuration entries
-      ddclient_use:
-        type: str
-        default: web
-        description: Service/Method to use to determine the public IP address
-      ddclient_web:
-        type: str
-        default: checkip.dyndns.org
-        description: Web address to use for IP lookup when `ddclient_use = web`
-      ddclient_if:
-        type: str
-        default: eth0
-        description: Interface to use for IP lookup when when `ddclient_use = if`
-      ddclient_ip:
-        type: str
-        default: 127.0.0.1
-        description: IP to use for static lookup when `ddclient_use = ip`
