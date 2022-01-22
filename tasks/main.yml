@@ -24,7 +24,7 @@
     dest: "{{ ddclient_configfile }}"
     owner: root
     group: root
-    mode: "640"
+    mode: "600"
   notify: restart ddclient
 
 - name: ddclient unit file is installed

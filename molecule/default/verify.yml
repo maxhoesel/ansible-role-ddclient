@@ -6,5 +6,5 @@
   - name: Check that daemon is running
     assert:
       that:
-        - 'ansible_facts.services["ddclient-test"].state == "running"'
-        - 'ansible_facts.services["ddclient-test"].status == "enabled"'
+        - 'ansible_facts.services["ddclient-test.service"].state == "running"'
+        - 'ansible_facts.services["ddclient-test.service"].status == "enabled"'

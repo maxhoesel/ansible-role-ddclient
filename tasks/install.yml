@@ -1,3 +1,12 @@
+- name: Dependencies are installed
+  apt:
+    name:
+      - debconf
+      - lsb-base
+      - perl
+      - libio-socket-ssl-perl
+      - libdata-validate-ip-perl
+
 - block:
     - name: Download and unpack ddclient release archive
       unarchive:

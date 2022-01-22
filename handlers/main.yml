@@ -1,5 +1,5 @@
 ---
 - name: restart ddclient
   service:
-    name: postfix
+    name: "{{ ddclient_systemd_unit }}"
     state: restarted
